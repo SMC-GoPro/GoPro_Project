@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "유튜브 썸네일 가리기",
+    "version": "1.0",
+    "description": "보기 싫은 썸네일의 영상 제목의 키워드를 추가하고 썸네일을 지워버리세요!",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/nuguri16.png",
+        "48": "icons/nuguri48.png",
+        "128": "icons/nuguri128.png"
+      }
+    }
+  }
+  
